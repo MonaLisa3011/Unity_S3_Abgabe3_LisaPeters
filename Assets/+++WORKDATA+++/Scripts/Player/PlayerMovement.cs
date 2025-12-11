@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 0.5f;
+    [SerializeField] private float moveSpeed = 3;
 
     private Rigidbody2D rb;
     [SerializeField] private Transform turnPivot;

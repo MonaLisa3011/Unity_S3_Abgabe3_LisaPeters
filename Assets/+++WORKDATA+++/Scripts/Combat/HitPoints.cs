@@ -22,7 +22,7 @@ public class HitPoints : MonoBehaviour
 
     public int maxHealth;
     public int currentHealth;
-    //public Slider healthSlider;
+    public Slider healthSlider;
 
     private void Start()
     {
@@ -38,13 +38,13 @@ public class HitPoints : MonoBehaviour
     public void TakeDamage(int damage, Vector2 knockbackDirection, float knockbackForce)
     {
 
-        currentHealth = currentHealth - damage;  //VORHER hitpoints--; 
+        currentHealth = currentHealth - damage; 
 
         if (rb != null)
         {
             rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
 
-            //healthSlider.value = (float)currentHealth / (float)maxHealth;
+            healthSlider.value = (float)currentHealth / (float)maxHealth;
         }
 
 
