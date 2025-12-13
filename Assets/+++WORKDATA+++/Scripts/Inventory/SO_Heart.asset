@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6da2dad4f8c234c9bba9b9b9f5f35a, type: 3}
+  m_Name: SO_Heart
+  m_EditorClassIdentifier: 
+  ItemID: Heart
+  itemName: Herz
+  description: Herzen heilen dich!
+  itemSprite: {fileID: -5654516946534706724, guid: 6a26799aa5be98642ba905ce7d578e01, type: 3}
+  highlightSprite: {fileID: -2980104354138302929, guid: 8ffc3dc30c7ec1a4eac9df96f4d16970, type: 3}
+  bonusSpeed: 0
+  moreHealth: 1

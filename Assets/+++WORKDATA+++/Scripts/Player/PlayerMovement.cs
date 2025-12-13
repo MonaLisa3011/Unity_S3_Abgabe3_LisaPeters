@@ -1,69 +1,43 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 0.5f;
     private Rigidbody2D rb;
-   // [SerializeField] private Transform turnPivot;
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Transform turnPivot;
+   
     private Vector2 moveInput;
 
     private bool movementBlocked;
 
-   // private Animator animator;
-
-
-
+    [SerializeField] GameObject LostPanel;
+    [SerializeField] GameObject WinPanel;
 
     void Start()
     {
-        if (rb == null)
-        {
+      
             rb = GetComponent<Rigidbody2D>();
-        }
-
-        //animator = GetComponent<Animator>();
-
+        LostPanel.SetActive(false);
+        WinPanel.SetActive(false);
 
 
     }
 
     void Update()
     {
-       // animator.SetBool("Iswalking", false);
-
-        //animator.SetBool("Iswalking", rb.linearVelocity.magnitude > 0);
-
-        if (movementBlocked)
-        {
-            return;
-        }
-        //rb.linearVelocity = moveInput * (moveSpeed + InventoryManager.Instance.GetBonusSpeed());
-
-        if (rb.linearVelocity.x > 0)
-        {
-           // animator.SetFloat("FacingRight", 1);
-        }
-        else if (rb.linearVelocity.x < 0)
-        {
-           // animator.SetFloat("FacingRight", -1);
-        }
-
-
-        if (moveInput.x != 0 || moveInput.y != 0)
-        {
-           // turnPivot.rotation = Quaternion.LookRotation(Vector3.forward, rb.linearVelocity);
-        }
-
+      
+        rb.velocity = moveInput * moveSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
-       // animator.SetBool("Iswalking", true);
+       
     }
 
     public void BlockMovementFor(float duration)
@@ -77,11 +51,8 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         movementBlocked = false;
+        LostPanel.SetActive(true);
     }
-
-
-
-
-
 }
+
 

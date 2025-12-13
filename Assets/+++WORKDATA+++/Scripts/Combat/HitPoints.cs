@@ -12,25 +12,23 @@ public class HitPoints : MonoBehaviour
 {
 
     [SerializeField] private UIHitPoints uiHitpoints;
-    [SerializeField] AudioClip hitSound;
+    [SerializeField] GameObject LostPanel;
 
     private Rigidbody2D rb;
-    private PlayerMovement playerMovement;
+    private EnemyMovement enemyController;
+
+    [SerializeField] AudioClip hitSound;
     private AudioSource audioSource;
-    private SpriteRenderer spriteRenderer;
-    private CinemachineImpulseSource cinemachineImpulseSource;
 
     public int maxHealth;
     public int currentHealth;
-    public Slider healthSlider;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        playerMovement = GetComponent<PlayerMovement>();
         audioSource = GetComponent<AudioSource>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
+        rb = GetComponent<Rigidbody2D>();
+        enemyController = GetComponent<EnemyMovement>();
+        // spriteRenderer = GetComponent<SpriteRenderer>();
 
         currentHealth = maxHealth;
     }
@@ -38,19 +36,18 @@ public class HitPoints : MonoBehaviour
     public void TakeDamage(int damage, Vector2 knockbackDirection, float knockbackForce)
     {
 
-        currentHealth = currentHealth - damage; 
+        currentHealth = currentHealth - damage;
 
         if (rb != null)
         {
             rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
 
-            healthSlider.value = (float)currentHealth / (float)maxHealth;
         }
 
 
-        if (playerMovement != null)
+        if (enemyController != null)
         {
-            playerMovement.BlockMovementFor(1f);
+            enemyController.BlockMovementFor(1f);
         }
 
         if (uiHitpoints != null)
@@ -63,29 +60,13 @@ public class HitPoints : MonoBehaviour
             audioSource.PlayOneShot(hitSound);
         }
 
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.DOKill();
-            spriteRenderer.DOColor(Color.red, 0.2f).SetLoops(2, LoopType.Yoyo);
-        }
-
-        if (gameObject.CompareTag("Player"))
-        {
-            
-            cinemachineImpulseSource.GenerateImpulse();
-        }
-
         if (currentHealth <= 0)
         {
-            if (gameObject.CompareTag("Player"))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-            else
-            {
-                spriteRenderer.DOKill();
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
+            LostPanel.SetActive(true);
+
         }
+
+
     }
 }
