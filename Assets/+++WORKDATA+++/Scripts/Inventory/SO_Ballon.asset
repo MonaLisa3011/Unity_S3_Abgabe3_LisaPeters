@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6da2dad4f8c234c9bba9b9b9f5f35a, type: 3}
+  m_Name: SO_Ballon
+  m_EditorClassIdentifier: 
+  ItemID: ballon
+  itemName: Ballon
+  description: "Ein Ballon f\xFCr Kinder."
+  itemSprite: {fileID: 7574569593671782055, guid: 7f9f9be4dd3955749810d768d23588c8, type: 3}
+  highlightSprite: {fileID: 4095821951922817856, guid: 2976a3f5793743f4b87febdb9bc4e14d, type: 3}
+  bonusSpeed: 0
+  moreHealth: 0

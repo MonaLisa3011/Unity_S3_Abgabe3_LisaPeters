@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6da2dad4f8c234c9bba9b9b9f5f35a, type: 3}
+  m_Name: SO_Star
+  m_EditorClassIdentifier: 
+  ItemID: star
+  itemName: Stern
+  description: Sterne sind weit oben.
+  itemSprite: {fileID: 5199979006384268662, guid: ba054793f4d134944b09bb4e287827c2, type: 3}
+  highlightSprite: {fileID: -1592956172428593457, guid: 1527241071d9c724caeb717d3aa5900a, type: 3}
+  bonusSpeed: 1
+  moreHealth: 0

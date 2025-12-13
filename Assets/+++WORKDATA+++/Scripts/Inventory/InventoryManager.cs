@@ -5,7 +5,7 @@ public class InventoryManager : MonoBehaviour
 {
     public List<SO_Item> ItemsInInventory = new List<SO_Item>();
 
-    // hier werden die Items, welche jetzt gerade einsammelbar sind zwischen gespeichert sind
+  
     public List<CollectableItem> collectableItems = new List<CollectableItem>();
 
     [SerializeField] private SO_Item[] allPossibleItems;

@@ -53,6 +53,14 @@ public class PlayerMovement : MonoBehaviour
         movementBlocked = false;
         LostPanel.SetActive(true);
     }
+
+    private void FixedUpdate()
+    {
+        if (DialogManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+    }
 }
 
 
