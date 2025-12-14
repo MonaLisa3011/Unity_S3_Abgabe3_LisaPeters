@@ -8,9 +8,11 @@ public class PlayerDamage : MonoBehaviour
     {
 
         HitPoints hitpoints = other.gameObject.GetComponent<HitPoints>();
-        if (hitpoints != null && other.gameObject.CompareTag("Player"))
+        if (hitpoints != null && other.gameObject.CompareTag("VogelMann"))
         {
             hitpoints.TakeDamage(damage, other.transform.position - transform.position, knockbackForce);
         }
     }
 }
+
+

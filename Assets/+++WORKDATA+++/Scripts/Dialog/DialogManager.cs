@@ -69,7 +69,7 @@ public class DialogManager : MonoBehaviour
                 return;
             }
 
-            if (PlayerInteraction.GetInstance())
+            //if (PlayerInteraction.GetInstance())
             {
                 ContinueStory();
                 CharacterSprite();

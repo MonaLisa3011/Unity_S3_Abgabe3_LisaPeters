@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
       
-        rb.velocity = moveInput * moveSpeed;
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -61,6 +62,12 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
     }
+
+    
+        
+
+
+    
 }
 
 

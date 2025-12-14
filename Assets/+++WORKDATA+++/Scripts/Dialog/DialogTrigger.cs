@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class DialogTrigger : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class DialogTrigger : MonoBehaviour
         if (playerInRange && !DialogManager.GetInstance().dialogueIsPlaying)
         {
            
-            if (PlayerInteraction.GetInstance().GetInteractionPressed())
+            //if (PlayerInteraction.GetInstance().GetInteractionPressed())
             {
                 Debug.Log("dialog startet");
                 DialogManager.GetInstance().EnterDialogueMode(inkJSON);
@@ -53,6 +54,8 @@ public class DialogTrigger : MonoBehaviour
             playerInRange = false;
         }
     }
+
+   
 
 
 }

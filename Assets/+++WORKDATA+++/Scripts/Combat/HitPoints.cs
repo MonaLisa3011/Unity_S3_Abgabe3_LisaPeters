@@ -10,25 +10,23 @@ using UnityEngine.UI;
 
 public class HitPoints : MonoBehaviour
 {
-
     [SerializeField] private UIHitPoints uiHitpoints;
     [SerializeField] GameObject LostPanel;
 
     private Rigidbody2D rb;
     private EnemyMovement enemyController;
 
-    [SerializeField] AudioClip hitSound;
-    private AudioSource audioSource;
 
+    public Slider healthSlider;
     public int maxHealth;
     public int currentHealth;
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+       
         rb = GetComponent<Rigidbody2D>();
         enemyController = GetComponent<EnemyMovement>();
-        // spriteRenderer = GetComponent<SpriteRenderer>();
+
 
         currentHealth = maxHealth;
     }
@@ -41,6 +39,8 @@ public class HitPoints : MonoBehaviour
         if (rb != null)
         {
             rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+
+            healthSlider.value = (float)currentHealth / (float)maxHealth;
 
         }
 
@@ -55,10 +55,7 @@ public class HitPoints : MonoBehaviour
             uiHitpoints.UpdateHitpoints(currentHealth);
         }
 
-        if (audioSource != null && hitSound != null)
-        {
-            audioSource.PlayOneShot(hitSound);
-        }
+
 
         if (currentHealth <= 0)
         {
@@ -66,7 +63,5 @@ public class HitPoints : MonoBehaviour
             LostPanel.SetActive(true);
 
         }
-
-
     }
 }

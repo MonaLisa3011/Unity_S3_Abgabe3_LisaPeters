@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("VogelMann").transform;
         
         StartButton.onClick.AddListener(StartGame);
         LostPanel.SetActive(false);
