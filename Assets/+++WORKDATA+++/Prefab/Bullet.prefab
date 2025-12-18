@@ -115,7 +115,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &1649691776530012897
 CircleCollider2D:
@@ -168,4 +168,4 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   speed: 20
   rb: {fileID: 7794768222899222475}
-  damage: 32
+  damage: 1

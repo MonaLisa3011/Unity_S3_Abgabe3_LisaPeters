@@ -74,7 +74,7 @@ public class QuestGiver : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Player is near" + gameObject.name);
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("VogelMann"))
         {
 
             highlight.SetActive(true);
@@ -87,7 +87,7 @@ public class QuestGiver : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("Player let area of " + gameObject.name);
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("VogelMann"))
         {
 
             highlight.SetActive(false);

@@ -17,7 +17,7 @@ public class HitPoints : MonoBehaviour
     private EnemyMovement enemyController;
 
 
-    public Slider healthSlider;
+   // public Slider healthSlider;
     public int maxHealth;
     public int currentHealth;
 
@@ -40,7 +40,7 @@ public class HitPoints : MonoBehaviour
         {
             rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
 
-            healthSlider.value = (float)currentHealth / (float)maxHealth;
+            //healthSlider.value = (float)currentHealth / (float)maxHealth;
 
         }
 

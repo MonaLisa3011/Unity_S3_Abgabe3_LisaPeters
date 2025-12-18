@@ -65,7 +65,7 @@ public class InventoryManager : MonoBehaviour
             //Destroy(item.gameObject);
 
             AddItem(collectableItems[i].itemData);
-           // Destroy(collectableItems[i].gameObject);
+            Destroy(collectableItems[i].gameObject);
         }
     }
 
@@ -75,7 +75,7 @@ public class InventoryManager : MonoBehaviour
         ItemsInInventory.Add(newItem);
         if (newItem.moreHealth > 0)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<HitPoints>().currentHealth += newItem.moreHealth;
+            GameObject.FindGameObjectWithTag("VogelMann").GetComponent<HitPoints>().currentHealth += newItem.moreHealth;
             QuestManager.Instance.OnItemCollected();
 
         }

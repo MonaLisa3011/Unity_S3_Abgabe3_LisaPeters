@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
     public PlayerAttack Weapon;
     public float speed = 20f;
     public Rigidbody2D rb;
-    public int damage = 40;
+    public int damage = 1;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
             EnemyMovement enemy = collision.GetComponent<EnemyMovement>();
             if (enemy != null)
             {
-                enemy.TakeDamage(20);
+                enemy.TakeDamage(damage);
             }
 
 
@@ -32,6 +32,8 @@ public class Bullet : MonoBehaviour
         }
 
     }
+
+    
 
     
 }

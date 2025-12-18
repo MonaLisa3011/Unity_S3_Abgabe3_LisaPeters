@@ -11,6 +11,8 @@ public class EnemyMovement : MonoBehaviour
     Vector2 moveDirection;
 
     public float health = 3;
+    public int maxHealth;
+    
 
     public bool movementBlocked;
 
@@ -20,7 +22,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] GameObject StartPanel;
     [SerializeField] Button StartButton;
 
-   
+    public Slider healthSlider;
+
+
 
 
     private void Awake()
@@ -36,12 +40,15 @@ public class EnemyMovement : MonoBehaviour
         StartButton.onClick.AddListener(StartGame);
         LostPanel.SetActive(false);
         ReturnButton.onClick.AddListener(RestartGame);
+
+        health = maxHealth;
     }
 
     void StartGame()
     {
         
         StartPanel.SetActive(false);
+        
 
     }
 
@@ -76,11 +83,16 @@ public class EnemyMovement : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Schaden");
         health -= damage;
         if (health <= 0)
         {
 
             Destroy(gameObject);
+        }
+        else
+        {
+            healthSlider.value = (float)health / (float)maxHealth;
         }
     }
 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 public class DialogTrigger : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class DialogTrigger : MonoBehaviour
     {
         if (playerInRange && !DialogManager.GetInstance().dialogueIsPlaying)
         {
-           
-            //if (PlayerInteraction.GetInstance().GetInteractionPressed())
+
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 Debug.Log("dialog startet");
                 DialogManager.GetInstance().EnterDialogueMode(inkJSON);

@@ -69,7 +69,7 @@ public class DialogManager : MonoBehaviour
                 return;
             }
 
-            //if (PlayerInteraction.GetInstance())
+           //if (PlayerInteraction.GetInstance())
             {
                 ContinueStory();
                 CharacterSprite();
@@ -145,6 +145,7 @@ public class DialogManager : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
 
     }
 
