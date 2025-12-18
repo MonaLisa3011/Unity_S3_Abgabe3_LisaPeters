@@ -17,5 +17,5 @@ MonoBehaviour:
   description: Sterne sind weit oben.
   itemSprite: {fileID: 5199979006384268662, guid: ba054793f4d134944b09bb4e287827c2, type: 3}
   highlightSprite: {fileID: -1592956172428593457, guid: 1527241071d9c724caeb717d3aa5900a, type: 3}
-  bonusSpeed: 1
+  bonusSpeed: 10
   moreHealth: 0
