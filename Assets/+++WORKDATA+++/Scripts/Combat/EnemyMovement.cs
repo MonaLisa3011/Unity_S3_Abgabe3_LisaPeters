@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
 
     public float health = 3;
     public int maxHealth;
-    
+
 
     public bool movementBlocked;
 
@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("VogelMann").transform;
-        
+
         StartButton.onClick.AddListener(StartGame);
         LostPanel.SetActive(false);
         ReturnButton.onClick.AddListener(RestartGame);
@@ -46,9 +46,9 @@ public class EnemyMovement : MonoBehaviour
 
     void StartGame()
     {
-        
+
         StartPanel.SetActive(false);
-        
+
 
     }
 
@@ -119,7 +119,6 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-
-
+   
 }
 

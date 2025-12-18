@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance { private set; get; }
+    // public int totalQuest = 4;
+    // private int completedQuests = 0;
+     public GameObject GewonnenPanel;
+   
+    
 
     private void Awake()
     {
@@ -142,4 +148,27 @@ public class QuestManager : MonoBehaviour
         SaveManager.Instance.SaveState.saveQuestState = temporaryQuestList.ToArray();
         SaveManager.Instance.SaveGame();
     }
+
+   //public void OnQuestComplete()
+   // {
+   //     completedQuests++;
+   //     if (completedQuests >= totalQuest)
+   //     {
+   //         ShowGewonnenPanel();
+   //     }
+   // }
+
+    //void ShowGewonnenPanel()
+   // {
+    //    GewonnenPanel.SetActive(true);
+    //    Time.timeScale = 0f;
+    //}
+    
+   // void CheckAllQuests()
+   // {
+   //     if (allQuests.All(q => q.isCompleted ))
+    //    {
+    //        GewonnenPanel.SetActive(true);
+    //    }
+   // }
 }
