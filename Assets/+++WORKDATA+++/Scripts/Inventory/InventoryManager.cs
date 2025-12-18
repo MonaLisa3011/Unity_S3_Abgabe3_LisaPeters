@@ -76,10 +76,10 @@ public class InventoryManager : MonoBehaviour
         if (newItem.moreHealth > 0)
         {
             GameObject.FindGameObjectWithTag("VogelMann").GetComponent<HitPoints>().currentHealth += newItem.moreHealth;
-            QuestManager.Instance.OnItemCollected();
+           
 
         }
-
+        QuestManager.Instance.OnItemCollected();
         SaveInventory();
 
     }

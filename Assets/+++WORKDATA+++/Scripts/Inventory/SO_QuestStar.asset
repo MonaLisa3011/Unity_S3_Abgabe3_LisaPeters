@@ -18,5 +18,5 @@ MonoBehaviour:
   requiredItem: {fileID: 11400000, guid: 2d72e4513a0bd4f41904c48fa3516d01, type: 2}
   requiredAmount: 3
   questReward: 10
-  currentAmount: 0
-  currentState: 0
+  currentAmount: 3
+  currentState: 3

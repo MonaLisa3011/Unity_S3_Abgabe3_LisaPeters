@@ -15,8 +15,8 @@ MonoBehaviour:
   questID: collect Worms
   questName: "W\xFCrmer suchen"
   questDescription: "Sammel drei W\xFCrmer."
-  requiredItem: {fileID: 0}
+  requiredItem: {fileID: 11400000, guid: 9e3b7e047d2af4645820dd6f997fded2, type: 2}
   requiredAmount: 3
   questReward: 10
-  currentAmount: 0
-  currentState: 0
+  currentAmount: 1
+  currentState: 1

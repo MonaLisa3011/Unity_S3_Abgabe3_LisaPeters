@@ -47,9 +47,9 @@ public class QuestGiver : MonoBehaviour
         else if (questData.currentState == SO_QuestData.QuestState.completed)
         {
             textQuestState.text = "!";
-            textQuestState.transform.DOLocalMoveY(120f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InCubic);
+            textQuestState.transform.DOScale(1.3f, 1f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutCubic);
         }
-        else if (questData.currentState == SO_QuestData.QuestState.active)
+        else if (questData.currentState == SO_QuestData.QuestState.closed)
         {
             textQuestState.text = " ";
             textQuestState.transform.DOKill();
