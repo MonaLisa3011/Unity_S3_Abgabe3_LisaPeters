@@ -9,9 +9,9 @@ public class QuestManager : MonoBehaviour
     public static QuestManager Instance { private set; get; }
     // public int totalQuest = 4;
     // private int completedQuests = 0;
-     public GameObject GewonnenPanel;
-   
-    
+    public GameObject GewonnenPanel;
+
+
 
     private void Awake()
     {
@@ -67,6 +67,8 @@ public class QuestManager : MonoBehaviour
             SaveManager.Instance.DeleteSaveFile();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+       
     }
 
     public void AssignQuest(SO_QuestData newQuestData)
@@ -149,26 +151,40 @@ public class QuestManager : MonoBehaviour
         SaveManager.Instance.SaveGame();
     }
 
-   //public void OnQuestComplete()
-   // {
-   //     completedQuests++;
-   //     if (completedQuests >= totalQuest)
-   //     {
-   //         ShowGewonnenPanel();
-   //     }
-   // }
+    //public void OnQuestComplete()
+    // {
+    //     completedQuests++;
+    //     if (completedQuests >= totalQuest)
+    //     {
+    //         ShowGewonnenPanel();
+    //     }
+    // }
 
-    //void ShowGewonnenPanel()
-   // {
-    //    GewonnenPanel.SetActive(true);
-    //    Time.timeScale = 0f;
-    //}
-    
-   // void CheckAllQuests()
-   // {
-   //     if (allQuests.All(q => q.isCompleted ))
+    public void ShowGewonnenPanel()
+    {
+        GewonnenPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    // void CheckAllQuests()
+    // {
+    //     if (allQuests.All(q => q.isCompleted ))
     //    {
     //        GewonnenPanel.SetActive(true);
     //    }
-   // }
+    // }
+
+   // public void FinishQuest()
+    //{
+       // if (allQuestData.QuestState.closed)
+        //foreach (SO_QuestData data in allQuestData)
+       // {
+            //if (data.currentState = SO_QuestData.QuestState.closed)
+           // {
+
+          //  }
+        //}
+
+    //}
 }
+

@@ -10,7 +10,7 @@ public class PlayerDetektion : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("VogelMann"))
         {
             enemyMovement.movementBlocked = false;
 
@@ -19,7 +19,7 @@ public class PlayerDetektion : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("VogelMann"))
         {
             enemyMovement.movementBlocked = true;
         }

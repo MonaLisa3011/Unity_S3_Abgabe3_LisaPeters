@@ -11,6 +11,7 @@ public class QuestGiver : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textQuestState;
     private SO_QuestData.QuestState questStateLastFrame;
+    [SerializeField] private QuestManager questManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -53,7 +54,11 @@ public class QuestGiver : MonoBehaviour
         {
             textQuestState.text = " ";
             textQuestState.transform.DOKill();
+            // questManager.ShowGewonnenPanel();
+            
         }
+
+       // questManager.FinishQuest();
     }
 
     void OnPlayerinteraction()
@@ -95,5 +100,10 @@ public class QuestGiver : MonoBehaviour
             playerInteraction.OnInteract.RemoveListener(OnPlayerinteraction);
         }
     }
+
+    //private void FixedUpdate()
+    //{
+     //   questManager.FinishQuest();
+    //}
 }
 
