@@ -101,9 +101,6 @@ public class QuestGiver : MonoBehaviour
         }
     }
 
-    //private void FixedUpdate()
-    //{
-     //   questManager.FinishQuest();
-    //}
+    
 }
 

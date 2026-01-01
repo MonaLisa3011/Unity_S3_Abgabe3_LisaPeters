@@ -15,6 +15,7 @@ public class SO_QuestData : ScriptableObject
     public string questID;
     public string questName;
     public string questDescription;
+   
 
     [Header("Requirements")]
     public SO_Item requiredItem;

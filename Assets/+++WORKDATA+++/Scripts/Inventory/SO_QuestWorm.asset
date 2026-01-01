@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: SO_QuestWorm
   m_EditorClassIdentifier: 
   questID: collect Worms
-  questName: "W\xFCrmer suchen"
-  questDescription: "Sammel drei W\xFCrmer."
+  questName: "Vogel t\xF6ten"
+  questDescription: "T\xF6te den Vogel und hole einen Wurm."
   requiredItem: {fileID: 11400000, guid: 9e3b7e047d2af4645820dd6f997fded2, type: 2}
-  requiredAmount: 3
+  requiredAmount: 1
   questReward: 10
-  currentAmount: 1
+  currentAmount: 0
   currentState: 1

@@ -7,6 +7,7 @@ public class CollectableItem : MonoBehaviour
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer highlightRenderer;
+    
 
     public string GUID;
 

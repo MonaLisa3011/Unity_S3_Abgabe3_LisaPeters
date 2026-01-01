@@ -24,10 +24,10 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        //umwandeln von savestate in einen text
+        
         string json = JsonUtility.ToJson(SaveState);
 
-        // speichern des texts auf der Festplatte
+        
         System.IO.File.WriteAllText(SavePath, json);
 
         Debug.Log("Save complited");
@@ -37,10 +37,10 @@ public class SaveManager : MonoBehaviour
     {
         if (System.IO.File.Exists(SavePath))
         {
-            // datei lesen von festplatte
+            
             string json = System.IO.File.ReadAllText(SavePath);
 
-            //text in globalstate objekt umwandeln
+            
             SaveState = JsonUtility.FromJson<GlobalState>(json);
 
             Debug.Log("Save complited");

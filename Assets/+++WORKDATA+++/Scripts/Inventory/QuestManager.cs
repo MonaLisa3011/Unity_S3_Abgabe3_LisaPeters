@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance { private set; get; }
-    // public int totalQuest = 4;
-    // private int completedQuests = 0;
+    
     public GameObject GewonnenPanel;
 
 
@@ -68,7 +67,7 @@ public class QuestManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-       
+
     }
 
     public void AssignQuest(SO_QuestData newQuestData)
@@ -113,7 +112,7 @@ public class QuestManager : MonoBehaviour
     {
         finishedQuest.currentState = SO_QuestData.QuestState.closed;
 
-        //Items aus Inventar entfernen 
+        
         for (int i = 0; i < finishedQuest.requiredAmount; i++)
         {
             InventoryManager.Instance.RemoveItem(finishedQuest.requiredItem);
@@ -124,6 +123,9 @@ public class QuestManager : MonoBehaviour
 
         uiQuestManager.UpdateAllQuestEnteries(activeQuests);
         SaveActiveQuests();
+
+        
+        CheckAllQuests();
     }
 
     void SaveActiveQuests()
@@ -141,7 +143,7 @@ public class QuestManager : MonoBehaviour
                 newSaveQuestState.currentState = (int)allQuestData[i].currentState;
                 newSaveQuestState.currentProgress = allQuestData[i].currentAmount;
 
-                //SaveManager.Instance.SaveState.saveQuestState[i] = newSaveQuestState;
+                
                 temporaryQuestList.Add(newSaveQuestState);
             }
 
@@ -151,40 +153,30 @@ public class QuestManager : MonoBehaviour
         SaveManager.Instance.SaveGame();
     }
 
-    //public void OnQuestComplete()
-    // {
-    //     completedQuests++;
-    //     if (completedQuests >= totalQuest)
-    //     {
-    //         ShowGewonnenPanel();
-    //     }
-    // }
+
+    
+
+    void CheckAllQuests()
+    {
+        bool finished = true;
+        foreach (SO_QuestData data in allQuestData)
+        {
+            if (data.currentState != SO_QuestData.QuestState.closed)
+            {
+                finished = false;
+                break;
+            }
+        }
+        if (finished)
+        {
+            ShowGewonnenPanel();
+        }
+    }
 
     public void ShowGewonnenPanel()
     {
         GewonnenPanel.SetActive(true);
         Time.timeScale = 0f;
     }
-
-    // void CheckAllQuests()
-    // {
-    //     if (allQuests.All(q => q.isCompleted ))
-    //    {
-    //        GewonnenPanel.SetActive(true);
-    //    }
-    // }
-
-   // public void FinishQuest()
-    //{
-       // if (allQuestData.QuestState.closed)
-        //foreach (SO_QuestData data in allQuestData)
-       // {
-            //if (data.currentState = SO_QuestData.QuestState.closed)
-           // {
-
-          //  }
-        //}
-
-    //}
 }
 

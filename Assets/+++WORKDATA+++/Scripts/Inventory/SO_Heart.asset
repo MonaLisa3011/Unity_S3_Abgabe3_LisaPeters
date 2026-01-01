@@ -18,4 +18,4 @@ MonoBehaviour:
   itemSprite: {fileID: -5654516946534706724, guid: 6a26799aa5be98642ba905ce7d578e01, type: 3}
   highlightSprite: {fileID: -2980104354138302929, guid: 8ffc3dc30c7ec1a4eac9df96f4d16970, type: 3}
   bonusSpeed: 0
-  moreHealth: 10
+  moreHealth: 1

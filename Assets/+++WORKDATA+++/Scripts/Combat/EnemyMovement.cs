@@ -1,10 +1,12 @@
 using System.Collections;
+using Ink.Parsed;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
+    
     public float moveSpeed = 2f;
     Rigidbody2D rb;
     Transform target;
@@ -12,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
 
     public float health = 3;
     public int maxHealth;
+
+    public GameObject LootPrefab;
 
 
     public bool movementBlocked;
@@ -24,8 +28,7 @@ public class EnemyMovement : MonoBehaviour
 
     public Slider healthSlider;
 
-
-
+   
 
     private void Awake()
     {
@@ -39,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
         StartButton.onClick.AddListener(StartGame);
         LostPanel.SetActive(false);
+        LootPrefab.SetActive(false);
         ReturnButton.onClick.AddListener(RestartGame);
 
         health = maxHealth;
@@ -89,6 +93,8 @@ public class EnemyMovement : MonoBehaviour
         {
 
             Destroy(gameObject);
+            LootPrefab.SetActive(true);
+            
         }
         else
         {
@@ -119,6 +125,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+  
    
 }
 
