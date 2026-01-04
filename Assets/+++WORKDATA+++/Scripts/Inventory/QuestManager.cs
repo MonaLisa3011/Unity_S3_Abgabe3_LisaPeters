@@ -124,7 +124,7 @@ public class QuestManager : MonoBehaviour
         uiQuestManager.UpdateAllQuestEnteries(activeQuests);
         SaveActiveQuests();
 
-        
+        // Das muss hier stehen, damit “CheckAllQuest” auch hier kontrolliert und ausgeführt wird.
         CheckAllQuests();
     }
 
@@ -158,17 +158,27 @@ public class QuestManager : MonoBehaviour
 
     void CheckAllQuests()
     {
+        // man nutzt das um zu schauen wie der zustand unserer Quest´s sind
+        // finished bedeutet das alles fertig ist und den bool nehmen wir um true or false zu benutzen
         bool finished = true;
+        // wir nutzen eine foreach schleife um alle unsere Quest´s zu durchlaufen
+        // wie eine liste 
         foreach (SO_QuestData data in allQuestData)
         {
+            // hier sagen wir das er kontrollieren soll wann die Quest´s abgeschlossen also "closed" sind
+            // wir nutzen das if um verschiedene Möglichkeiten zu geben 
             if (data.currentState != SO_QuestData.QuestState.closed)
             {
+                // wenn noch nicht alle Quest´s fertig sind soll er...
                 finished = false;
+                //... es nicht zeigen und nicht ausführen. (Aber auch nicht löschen weswegen dort nur "break" steht.)
                 break;
             }
         }
+        // wenn alle fertig und aubgeschlossen sind soll...
         if (finished)
         {
+            //... das gewonnen Panel gezeigt werden
             ShowGewonnenPanel();
         }
     }
